@@ -14,9 +14,9 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class RoleInterceptor {
+public class AuthInterceptor {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(RoleInterceptor.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuthInterceptor.class);
 
     private static final String NO_AUTH = "没有权限哦！这是一个切面！";
 
