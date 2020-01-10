@@ -1,6 +1,6 @@
 package com.flying.constant;
 
-public enum HSHttpCodeEnum {
+public enum HttpCodeEnum {
     CODE_200("200", 200),
 
     CODE_300("300", 300),
@@ -14,7 +14,7 @@ public enum HSHttpCodeEnum {
     private String name;
     private int value;
 
-    HSHttpCodeEnum(String name, int value) {
+    HttpCodeEnum(String name, int value) {
         this.name = name;
         this.value = value;
     }

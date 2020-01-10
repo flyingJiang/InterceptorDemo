@@ -1,7 +1,7 @@
 package com.flying.aspect;
 
-import com.flying.constant.HSHttpCodeEnum;
-import com.flying.entity.HSResult;
+import com.flying.constant.HttpCodeEnum;
+import com.flying.entity.Result;
 import com.flying.exception.MyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +15,9 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler({ MyException.class })
     @ResponseBody
-    public HSResult handleNoAuthException(MyException e) {
+    public Result handleNoAuthException(MyException e) {
         LOGGER.error("handle handleNoAuthException, ex={}", e.getMessage(), e);
-        HSResult hsResult = HSResult.build(HSHttpCodeEnum.CODE_401.getValue(),e.getMessage());
-        return hsResult;
+        Result result = Result.build(HttpCodeEnum.CODE_401.getValue(),e.getMessage());
+        return result;
     }
 }

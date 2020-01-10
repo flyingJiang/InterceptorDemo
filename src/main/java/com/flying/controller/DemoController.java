@@ -2,8 +2,8 @@ package com.flying.controller;
 
 
 import com.flying.annotation.Auth;
-import com.flying.constant.HSHttpCodeEnum;
-import com.flying.entity.HSResult;
+import com.flying.constant.HttpCodeEnum;
+import com.flying.entity.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,16 +19,16 @@ public class DemoController {
     @Auth("yes")
     @GetMapping("/yes")
     @ResponseBody
-    public HSResult<String> yesDemo() {
+    public Result<String> yesDemo() {
         logger.info("Yes is going");
-        return HSResult.build(HSHttpCodeEnum.CODE_200.getValue(),"ok");
+        return Result.build(HttpCodeEnum.CODE_200.getValue(),"ok");
     }
 
     @Auth("no")
     @GetMapping("/no")
     @ResponseBody
-    public HSResult<String> noDemo() {
+    public Result<String> noDemo() {
         logger.info("No is going");
-        return HSResult.build(HSHttpCodeEnum.CODE_500.getValue(), "no");
+        return Result.build(HttpCodeEnum.CODE_500.getValue(), "no");
     }
 }
